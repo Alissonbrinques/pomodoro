@@ -7,6 +7,8 @@ var ws = document.getElementById('w_seconds');
 
 var bm = document.getElementById('b_minutes');
 var bs = document.getElementById('b_seconds');
+const audio = new Audio('meu_audio.mp3');   
+const audio_two = new Audio('meu_audio2.mp3');
 
 var startTimer;
 
@@ -50,6 +52,7 @@ function timer(){
         if(bs.innerText != 0){
             bs.innerText--;
         } else if(bm.innerText != 0 && bs.innerText == 0){
+            audio.play();   
             bs.innerText = 59;
             bm.innerText--;
         }
@@ -62,7 +65,7 @@ function timer(){
 
         bm.innerText = 5;
         bs.innerText = "00";
-        
+        audio_two.play();
         document.getElementById('counter').innerText++;
 
         
